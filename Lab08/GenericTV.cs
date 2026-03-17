@@ -6,34 +6,11 @@ namespace Lab08
 {
     internal class GenericTV : TV_impl
     {
-        public string getBrand()
-        {
-            return "Generic Brand";
-        }
-
-        public int getSmartTVPrice()
-        {
-            return 300;
-        }
-
-        public int getTVPrice()
-        {
-            return 200;
-        }
-
-        public int getUltraTVPrice()
-        {
-            return 400;
-        }
-
-        public string getResolution()
-        {
-            return "5.5 watts / hour";
-        }
-
-        public string getPowerUsage()
-        {
-            return "2K HD";
-        }
+        public string getBrand() => "Generic Brand";
+        public int getSmartTVPrice() => 300;
+        public int getTVPrice() => 200;
+        public int getUltraTVPrice() => 400;
+        public string getResolution() => "5.5 watts / hour";
+        public string getPowerUsage() => "2K HD";
     }
 }

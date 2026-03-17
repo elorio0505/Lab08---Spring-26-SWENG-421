@@ -17,6 +17,13 @@ namespace Lab08
             this.msrp = impl.getTVPrice();
         }
 
+        // Methods
+        public TV replenish(string type, int budget)
+        // TODO: Implement this in a way that isn't completely terrible. I kept getting distracted. 
+        {
+            throw new NotImplementedException();
+        }
+
         // Getters
         public string getType()
         {
@@ -33,7 +40,7 @@ namespace Lab08
             return impl.getBrand();
         }
 
-        public virtual string getInfo() => throw NotImplementedException;
+        public virtual string getInfo() => throw new NotImplementedException();
 
         protected class SmartTV : TV
         {
@@ -49,7 +56,7 @@ namespace Lab08
             {
                 return powerUsage;
             }
-			public override string getInfo() => throw NotImplementedException;
+			public override string getInfo() => throw new NotImplementedException();
 		}
 
         protected class UltraTV : TV
@@ -65,7 +72,7 @@ namespace Lab08
             {
                 return resolution;
             }
-			public override string getInfo() => throw NotImplementedException;
+			public override string getInfo() => throw new NotImplementedException();
 		}
     }
 }
