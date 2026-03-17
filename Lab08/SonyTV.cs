@@ -6,34 +6,11 @@ namespace Lab08
 {
     internal class SonyTV : TV_impl
     {
-        public string getBrand()
-        {
-            return "Sony";
-        }
-
-        public string getPowerUsage()
-        {
-            return "6.35 watts/hour";
-        }
-
-        public string getResolution()
-        {
-            return "4K HD";
-        }
-
-        public int getSmartTVPrice()
-        {
-            return 380;
-        }
-
-        public int getTVPrice()
-        {
-            return 280;
-        }
-
-        public int getUltraTVPrice()
-        {
-            return 480;
-        }
+        public string getBrand() => "Sony";
+        public string getPowerUsage() => "6.35 watts/hour";
+        public string getResolution() => "4K HD";
+        public int getSmartTVPrice() => 380;
+        public int getTVPrice() => 280;
+        public int getUltraTVPrice() => 480;
     }
 }

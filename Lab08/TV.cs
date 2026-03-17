@@ -33,6 +33,8 @@ namespace Lab08
             return impl.getBrand();
         }
 
+        public virtual string getInfo() => throw NotImplementedException;
+
         protected class SmartTV : TV
         {
             string powerUsage;
@@ -47,7 +49,8 @@ namespace Lab08
             {
                 return powerUsage;
             }
-        }
+			public override string getInfo() => throw NotImplementedException;
+		}
 
         protected class UltraTV : TV
         {
@@ -62,6 +65,7 @@ namespace Lab08
             {
                 return resolution;
             }
-        }
+			public override string getInfo() => throw NotImplementedException;
+		}
     }
 }
