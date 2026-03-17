@@ -10,7 +10,7 @@ namespace Lab08
         public int getSmartTVPrice() => 300;
         public int getTVPrice() => 200;
         public int getUltraTVPrice() => 400;
-        public string getResolution() => "5.5 watts / hour";
-        public string getPowerUsage() => "2K HD";
+        public string getResolution() => "2K HD";
+        public string getPowerUsage() => "5.5 watts/hour";
     }
 }

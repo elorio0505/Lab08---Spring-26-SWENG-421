@@ -19,9 +19,26 @@ namespace Lab08
 
         // Methods
         public TV replenish(string type, int budget)
-        // TODO: Implement this in a way that isn't completely terrible. I kept getting distracted. 
         {
-            throw new NotImplementedException();
+            TV bestMatch = null;
+            int highPrice = -1;
+
+            var options = new List<TV>
+            {
+                new TV(this.impl), new SmartTV(this.impl), new UltraTV(this.impl)
+            };
+
+            foreach (var option in options)
+            {
+                if (targetType != null && option.getType() != targetType) 
+                    continue;
+                if (option.getMSRP() <= budget && option.getMSRP() > highPrice)
+                {
+                    highPrice = option.getMSRP();
+                    bestMatch = option;
+                }
+            }
+            return bestMatch;
         }
 
         // Getters
@@ -40,23 +57,32 @@ namespace Lab08
             return impl.getBrand();
         }
 
-        public virtual string getInfo() => throw new NotImplementedException();
+        public virtual string getInfo()
+        {
+            return "Brand: " + getBrand() + ", Type: " + getType() + ", Price: $" + getMSRP();
+        }
 
         protected class SmartTV : TV
         {
-            string powerUsage;
+            private string powerUsage;
 
             // Constructor
             public SmartTV(TV_impl impl) : base(impl)
             {
-                this.powerUsage = impl.getPowerUsage(); 
+                this.type = "Smart_TV";
+                this.msrp = impl.getSmartTVPrice();
+                this.powerUsage = impl.getPowerUsage();
             }
 
             public string getPowerUsage()
             {
                 return powerUsage;
             }
-			public override string getInfo() => throw new NotImplementedException();
+			
+            public override string getInfo()
+            {
+                return base.getInfo() + ", Power Usage: " + this.powerUsage;
+            }
 		}
 
         protected class UltraTV : TV
@@ -65,6 +91,8 @@ namespace Lab08
 
             public UltraTV(TV_impl impl) : base(impl)
             {
+                this.type = "UltraHD_TV";
+                this.msrp = impl.getUltraTVPrice();
                 this.resolution = impl.getResolution();
             }
 
@@ -72,7 +100,10 @@ namespace Lab08
             {
                 return resolution;
             }
-			public override string getInfo() => throw new NotImplementedException();
+			public override string getInfo()
+            {
+                return base.getInfo() + ", Resolution: " + this.resolution;
+            }
 		}
     }
 }
