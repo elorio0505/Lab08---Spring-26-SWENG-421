@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab08
 {
-    internal class TV
+    internal class TV : TV_IF
     {
         // Fields
         protected string type = "TV";
@@ -30,7 +30,7 @@ namespace Lab08
 
             foreach (var option in options)
             {
-                if (targetType != null && option.getType() != targetType) 
+                if (type != null && option.getType() != type) 
                     continue;
                 if (option.getMSRP() <= budget && option.getMSRP() > highPrice)
                 {
@@ -60,6 +60,11 @@ namespace Lab08
         public virtual string getInfo()
         {
             return "Brand: " + getBrand() + ", Type: " + getType() + ", Price: $" + getMSRP();
+        }
+
+        TV_IF TV_IF.replenish(string type, int budget)
+        {
+            return replenish(type, budget);
         }
 
         protected class SmartTV : TV

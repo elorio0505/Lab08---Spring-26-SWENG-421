@@ -5,6 +5,11 @@ namespace Lab08
     internal class Buyer
     {
         internal TV tv;
+
+        public Buyer(TV tv)
+        {
+            SetTV(tv);
+        }
         public void SetTV(TV newTv) => tv = newTv;
         public void Replenish(string type, int budget)
         {
