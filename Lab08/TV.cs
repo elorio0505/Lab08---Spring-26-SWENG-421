@@ -22,6 +22,7 @@ namespace Lab08
         {
             TV bestMatch = null;
             int highPrice = -1;
+            int currentPrice = this.getMSRP();
 
             var options = new List<TV>
             {
@@ -32,7 +33,8 @@ namespace Lab08
             {
                 if (type != null && option.getType() != type) 
                     continue;
-                if (option.getMSRP() <= budget && option.getMSRP() > highPrice)
+
+                if (option.getMSRP() <= budget && option.getMSRP() > currentPrice && option.getMSRP() > highPrice)
                 {
                     highPrice = option.getMSRP();
                     bestMatch = option;

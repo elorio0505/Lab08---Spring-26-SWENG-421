@@ -15,7 +15,11 @@ namespace Lab08
         {
             if (tv != null)
             {
-                tv = (TV)tv.replenish(type, budget);
+                TV newTV = tv.replenish(type, budget);
+                if (newTV != null)
+                {
+                    tv = newTV;
+                }
             }
         }
         public void Show()

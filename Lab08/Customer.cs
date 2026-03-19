@@ -15,7 +15,11 @@ namespace Lab08
         {
             if (tv_if != null)
             {
-                tv_if = (TV_IF)tv_if.replenish(type, budget);
+                TV_IF newTV = tv_if.replenish(type, budget);
+                if (newTV != null)
+                {
+                    tv_if = newTV;
+                }
             }
         }
         public void Show()
